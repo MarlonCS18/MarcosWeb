@@ -1,0 +1,22 @@
+.producto-img {
+    transition: opacity 0.4s ease-in-out;
+    display: block;
+}
+
+.producto-img:hover {
+    opacity: 0.8;
+}
+
+.navbar {
+    padding: 1rem 1rem; 
+}
+
+.navbar-brand {
+    font-size: 1.8rem; 
+    font-weight: bold;
+}
+
+.carousel-item img {
+    height: 550px; 
+    object-fit: cover;
+}
