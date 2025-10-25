@@ -42,6 +42,12 @@ public class ProductoController {
         return "index";
     }
 
+    // *** NUEVO MÉTODO PARA LA PÁGINA "NOSOTROS" ***
+    @GetMapping("/nosotros")
+    public String mostrarPaginaNosotros() {
+        return "nosotros"; // Esto le dice a Spring que busque un archivo llamado nosotros.html
+    }
+
     // Página catálogo normal
     @GetMapping("/productos")
     public String mostrarProductos(Model model) {
@@ -106,7 +112,7 @@ public class ProductoController {
         return "redirect:/productos/editar";
     }
 
-    // API REST
+    // API REST (No es necesario tocar esta parte)
     @ResponseBody
     @GetMapping("/productos/api")
     public List<Producto> getProductosApi() {

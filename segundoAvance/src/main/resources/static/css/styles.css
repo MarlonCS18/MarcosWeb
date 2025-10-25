@@ -1,22 +1,266 @@
-.producto-img {
-    transition: opacity 0.4s ease-in-out;
-    display: block;
+/* --- ESTILOS GENERALES Y TIPOGRAFÍA --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #495057;
 }
 
-.producto-img:hover {
-    opacity: 0.8;
+.bg-alternate {
+    background-color: #eef2f9; /* El nuevo color de fondo para alternar */
 }
 
-.navbar {
-    padding: 1rem 1rem; 
-}
-
+/* --- BARRA DE NAVEGACIÓN --- */
 .navbar-brand {
-    font-size: 1.8rem; 
-    font-weight: bold;
+    font-size: 1.5rem;
 }
 
-.carousel-item img {
-    height: 550px; 
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff !important;
+}
+
+/* --- CÓDIGO CSS ACTUALIZADO --- */
+
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative; /* Necesario para posicionar el contenido superpuesto */
+    padding: 8rem 0;
+    background: url('../img/setup3.jpg') no-repeat center center/cover; /* La imagen como fondo */
+    color: white; /* Cambiamos el color del texto a blanco */
+}
+
+/* Capa oscura para asegurar la legibilidad del texto */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de fondo */
+    z-index: 1;
+}
+
+/* Contenido del Hero (texto y botones) */
+.hero-content {
+    position: relative; /* Posiciona el contenido por encima de la capa oscura */
+    z-index: 2;
+}
+
+/* La animación y la clase .hero-image ya no son necesarias */
+/* Puedes borrar estas reglas de tu CSS si aún existen */
+.hero-image {
+   /* Estilos anteriores eliminados */
+}
+
+@keyframes float {
+    /* Animación eliminada */
+}
+
+/* --- SECCIÓN DE CATEGORÍAS --- */
+.category-section {
+    background-color: #ffffff;
+}
+
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+}
+
+.category-card img {
+    width: 100%;
+    height: 300px;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+/* --- PRODUCTOS DESTACADOS --- */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Para la insignia */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1) !important;
+}
+
+.product-card .card-img-top {
+    height: 200px;
+    object-fit: contain;
+}
+
+.badge-overlay {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+}
+
+/* --- BANNER DE OFERTAS (CTA) --- */
+.cta-banner {
+    background: linear-gradient(45deg, #8a2be2, #007bff); /* Nuevo gradiente morado a azul */
+    border-radius: 1rem;
+    margin: 3rem 0;
+    overflow: hidden; /* Asegura que la imagen no se salga */
+}
+
+.cta-banner .cta-image {
+    max-height: 300px; /* Altura máxima para la imagen en el banner */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Para pantallas más pequeñas, ajusta la imagen si es necesario */
+@media (max-width: 768px) {
+    .cta-banner .cta-image {
+        max-height: 200px; /* Altura más pequeña en móviles */
+        margin-top: 1rem;
+    }
+}
+
+/* --- MARCAS ALIADAS --- */
+.brand-icon {
+    margin: 0 1.5rem;
+    color: #adb5bd; /* Gris para que no sea tan llamativo */
+    transition: color 0.3s ease;
+}
+
+.brand-icon:hover {
+    color: #495057; /* Un gris más oscuro al pasar el mouse */
+}
+
+/* --- FOOTER --- */
+.footer-link {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff;
+}
+
+.text-muted-footer {
+    color: #adb5bd !important;
+}
+.bg-custom-nav {
+    background-color: #f8f9fa; /* Un gris estándar de Bootstrap, muy sutil */
+}
+
+/* --- ESTILOS PARA LA PÁGINA "NOSOTROS" (VERSIÓN DEFINITIVA) --- */
+
+.about-hero-section {
+    position: relative;
+    height: 60vh;
+    background: url('https://via.placeholder.com/1500x600?text=Equipo+TiendaTech') no-repeat center center/cover;
+}
+
+.about-hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.about-hero-section .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.values-section .value-card-v2 {
+    padding: 2rem;
+    height: 100%;
+}
+
+.why-choose-us-section .choice-item {
+    color: #0d6efd;
+    transition: transform 0.3s ease;
+}
+
+.why-choose-us-section .choice-item:hover {
+    transform: scale(1.1);
+}
+
+.why-choose-us-section .choice-item h6 {
+    color: #495057; /* Color de texto normal */
+}
+
+/* Estilos para los Testimonios */
+.testimonials-section {
+    position: relative;
+}
+
+.testimonial-card {
+    background-color: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    border-left: 5px solid #0d6efd;
+    font-style: italic;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.testimonial-card .author {
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #333;
+}
+
+/* Estilos para el Acordeón de FAQ */
+.faq-section .accordion-item {
+    border: 1px solid #dee2e6;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.faq-section .accordion-button {
+    font-weight: 600;
+}
+
+.faq-section .accordion-button:not(.collapsed) {
+    color: #0d6efd;
+    background-color: #e7f1ff;
+    box-shadow: none;
 }
