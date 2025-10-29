@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
     <meta charset="UTF-8">
     <title>Sobre Nosotros - TiendaTech</title>
@@ -10,266 +11,401 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
+
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-    <div class="container">
-        <a class="navbar-brand fw-bold text-primary" href="/">TiendaTech</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link active" href="/nosotros">Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link" href="/productos">Catálogo</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<header class="about-hero-section text-center text-white d-flex align-items-center">
-    <div class="container hero-content">
-        <h1 class="display-3 fw-bold">Conoce la Pasión Detrás de la Tecnología</h1>
-        <p class="lead mt-3">Somos más que una tienda. Somos tu aliado en el mundo de la innovación.</p>
-    </div>
-</header>
-
-<section class="about-company-section py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <img src="https://via.placeholder.com/500x450?text=TiendaTech" class="img-fluid rounded shadow-lg" alt="Nuestra Empresa">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="fw-bold">Nuestra Empresa</h2>
-                <p class="text-muted">En TiendaTech, creemos que la tecnología tiene el poder de transformar vidas. Nacimos con la misión de hacer accesibles los mejores y más innovadores productos del mercado, pero nuestro objetivo va más allá. Queremos ser una fuente de inspiración y conocimiento para nuestra comunidad, ofreciendo no solo equipos de alta calidad, sino también el asesoramiento experto para que cada cliente tome la mejor decisión.</p>
-                <p class="text-muted">Desde nuestros inicios, nos hemos enfocado en crear una experiencia de compra excepcional, basada en la confianza, la transparencia y una genuina pasión por lo que hacemos.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="values-section py-5 bg-alternate">
-    <div class="container text-center">
-        <h2 class="fw-bold">Valores de TiendaTech</h2>
-        <p class="lead text-muted mb-5">«Los Pilares que Definen Nuestro Trabajo y Nos Hacen Diferentes»</p>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="value-card-v2">
-                    <i class="fas fa-heart fa-3x text-primary mb-3"></i>
-                    <h4>Pasión</h4>
-                    <p>Amamos lo que hacemos. Cada producto es seleccionado y cada cliente es atendido con la misma dedicación que tendríamos para nosotros mismos.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="value-card-v2">
-                    <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
-                    <h4>Innovación</h4>
-                    <p>Estamos siempre en la vanguardia, buscando las últimas tendencias y tecnologías para ofrecerte un catálogo fresco y relevante.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="value-card-v2">
-                    <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
-                    <h4>Compromiso</h4>
-                    <p>Tu confianza es nuestro mayor activo. Nos comprometemos a ofrecerte transparencia, calidad y un soporte que va más allá de la venta.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mission-vision-section py-5">
-    <div class="container">
-        <div class="row align-items-center mb-5">
-            <div class="col-lg-6">
-                <img src="https://via.placeholder.com/500x350?text=Nuestra+Misión" class="img-fluid rounded shadow-lg" alt="Misión">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="fw-bold">Nuestra Misión</h2>
-                <p class="text-muted">Ser el principal catalizador de experiencias tecnológicas en el país, ofreciendo un portafolio de productos innovadores y un servicio de asesoramiento experto que empodere a nuestros clientes para alcanzar sus metas personales y profesionales.</p>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <img src="https://via.placeholder.com/500x350?text=Nuestra+Visión" class="img-fluid rounded shadow-lg" alt="Visión">
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <h2 class="fw-bold">Nuestra Visión</h2>
-                <p class="text-muted">Convertirnos en la comunidad de entusiastas de la tecnología más grande y confiable de la región, siendo reconocidos no solo por la calidad de nuestros productos, sino por nuestro compromiso con la educación y el soporte al cliente.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="why-choose-us-section py-5 bg-alternate">
-    <div class="container text-center">
-        <h2 class="fw-bold">¿Por Qué Elegirnos?</h2>
-        <p class="lead text-muted mb-5">Te ofrecemos una experiencia de compra superior, centrada en tus necesidades.</p>
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-2 col-md-4 col-6">
-                <div class="choice-item">
-                    <i class="fas fa-award fa-3x"></i>
-                    <h6 class="mt-3">Calidad Garantizada</h6>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-                <div class="choice-item">
-                    <i class="fas fa-dollar-sign fa-3x"></i>
-                    <h6 class="mt-3">Precios Competitivos</h6>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-                <div class="choice-item">
-                    <i class="fas fa-shipping-fast fa-3x"></i>
-                    <h6 class="mt-3">Envío Rápido</h6>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-                <div class="choice-item">
-                    <i class="fas fa-headset fa-3x"></i>
-                    <h6 class="mt-3">Soporte Experto</h6>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-6">
-                <div class="choice-item">
-                    <i class="fas fa-lock fa-3x"></i>
-                    <h6 class="mt-3">Compra Segura</h6>
-                </div>
-            </div>
-            <div class="col-lg-1"></div>
-        </div>
-        <p class="text-center mt-5 fst-italic">"En cada detalle, buscamos la excelencia. Porque no solo vendemos tecnología, construimos relaciones de confianza."</p>
-    </div>
-</section>
-
-<section class="testimonials-section py-5">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Lo que opinan nuestros clientes</h2>
-            <p class="lead text-muted">Somos reconocidos como una gran empresa gracias a la preferencia y recomendación de nuestros clientes. Su confianza es nuestro mejor testimonio.</p>
-        </div>
-        <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="testimonial-card">
-                        <p>"Una atención increíble. Me ayudaron a elegir la laptop perfecta para mi trabajo. ¡Totalmente recomendados!"</p>
-                        <div class="author">- Lucía Fernandez</div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="testimonial-card">
-                        <p>"La calidad de los productos es A1 y el envío fue rapidísimo. Compré unos audífonos y estoy fascinado."</p>
-                        <div class="author">- Javier Mendoza</div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="testimonial-card">
-                        <p>"Lo que más valoro es el soporte post-venta. Tuvieron la paciencia para resolver todas mis dudas. ¡Gracias!"</p>
-                        <div class="author">- Mariana Costa</div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom-nav sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="/">TiendaTech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
-        </div>
-    </div>
-</section>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/productos">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/carrito">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span th:if="${session.carrito != null and !session.carrito.isEmpty()}"
+                                class="badge rounded-pill bg-danger" th:text="${session.carrito.size()}"></span>
+                        </a>
+                    </li>
 
-<section class="faq-section py-5 bg-alternate">
-    <div class="container">
-        <h2 class="fw-bold text-center mb-5">Preguntas Frecuentes</h2>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="accordion" id="faqAccordion1">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">¿Cuáles son los métodos de pago?</button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
-                            <div class="accordion-body">Aceptamos tarjetas de crédito/débito (Visa, Mastercard), Yape, Plin y transferencias bancarias.</div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">¿Hacen envíos a todo el país?</button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
-                            <div class="accordion-body">Sí, realizamos envíos a todo el Perú a través de Olva Courier y Shalom.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="accordion" id="faqAccordion2">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">¿Cuál es la política de garantía?</button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
-                            <div class="accordion-body">Todos nuestros productos nuevos cuentan con una garantía de 12 meses por defectos de fábrica.</div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">¿Puedo solicitar factura?</button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
-                            <div class="accordion-body">Sí, emitimos boleta y factura electrónica. Solo debes indicarlo al momento de tu compra.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                    <li class="nav-item ms-2" sec:authorize="!isAuthenticated()">
+                        <a class="btn btn-primary text-white px-3" href="/login">Iniciar Sesión</a>
+                    </li>
 
-<footer class="bg-dark text-white pt-5 pb-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <h5 class="text-uppercase fw-bold">TiendaTech</h5>
-                <p class="text-muted-footer">Innovación y calidad al alcance de tu mano. Tu tienda de tecnología de confianza.</p>
-            </div>
-            <div class="col-md-2 mb-4">
-                <h5 class="text-uppercase fw-bold">Navegación</h5>
-                <ul class="list-unstyled">
-                    <li><a href="/" class="footer-link">Inicio</a></li>
-                    <li><a href="/productos" class="footer-link">Catálogo</a></li>
-                    <li><a href="#" class="footer-link">Ofertas</a></li>
-                    <li><a href="#" class="footer-link">Contacto</a></li>
+                    <li class="nav-item dropdown ms-2" sec:authorize="hasRole('USER')">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Mi Cuenta</a>
+                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="/mi-cuenta">Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="/mis-pedidos">Mis Pedidos</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form th:action="@{/logout}" method="post"><button type="submit"
+                                        class="dropdown-item">Cerrar Sesión</button></form>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown ms-2" sec:authorize="hasRole('ADMIN')">
+
+                        <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Administración
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                            <li><a class="dropdown-item" href="/admin/dashboard">Ir al Dashboard</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form th:action="@{/logout}" method="post"><button type="submit"
+                                        class="dropdown-item">Cerrar Sesión</button></form>
+                            </li>
+                        </ul>
+
+                    </li>
                 </ul>
             </div>
-            <div class="col-md-3 mb-4">
-                 <h5 class="text-uppercase fw-bold">Soporte</h5>
-                 <ul class="list-unstyled">
-                     <li><a href="#" class="footer-link">Preguntas Frecuentes</a></li>
-                     <li><a href="#" class="footer-link">Política de Devoluciones</a></li>
-                     <li><a href="#" class="footer-link">Términos de Servicio</a></li>
-                 </ul>
-            </div>
-            <div class="col-md-3 mb-4">
-                <h5 class="text-uppercase fw-bold">Síguenos</h5>
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        </div>
+    </nav>
+
+    <header class="about-hero-section text-center text-white d-flex align-items-center">
+        <div class="container hero-content">
+            <h1 class="display-3 fw-bold">Conoce la Pasión Detrás de la Tecnología</h1>
+            <p class="lead mt-3">Somos más que una tienda. Somos tu aliado en el mundo de la innovación.</p>
+        </div>
+    </header>
+    <section class="about-company-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img th:src="@{/img/nosotros.jpg}" class="img-fluid rounded shadow-lg"
+                        alt="Nuestro equipo trabajando en TiendaTech">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold">Nuestra Empresa</h2>
+                    <p class="text-muted">En TiendaTech, creemos que la tecnología tiene el poder de transformar vidas.
+                        Nacimos con la misión de hacer accesibles los mejores y más innovadores productos del mercado,
+                        pero nuestro objetivo va más allá. Queremos ser una fuente de inspiración y conocimiento para
+                        nuestra comunidad, ofreciendo no solo equipos de alta calidad, sino también el asesoramiento
+                        experto para que cada cliente tome la mejor decisión.</p>
+                    <p class="text-muted">Desde nuestros inicios, nos hemos enfocado en crear una experiencia de compra
+                        excepcional, basada en la confianza, la transparencia y una genuina pasión por lo que hacemos.
+                    </p>
+                </div>
             </div>
         </div>
-        <hr>
-        <div class="text-center text-muted-footer">
-            &copy; 2025 TiendaTech. Todos los derechos reservados.
+    </section>
+    <section class="values-section py-5 bg-alternate">
+        <div class="container text-center">
+            <h2 class="fw-bold">Valores de TiendaTech</h2>
+            <p class="lead text-muted mb-5">«Los Pilares que Definen Nuestro Trabajo y Nos Hacen Diferentes»</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="value-card-v2"><i class="fas fa-heart fa-3x text-primary mb-3"></i>
+                        <h4>Pasión</h4>
+                        <p>Amamos lo que hacemos. Cada producto es seleccionado y cada cliente es atendido con la misma
+                            dedicación que tendríamos para nosotros mismos.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card-v2"><i class="fas fa-rocket fa-3x text-primary mb-3"></i>
+                        <h4>Innovación</h4>
+                        <p>Estamos siempre en la vanguardia, buscando las últimas tendencias y tecnologías para
+                            ofrecerte un catálogo fresco y relevante.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card-v2"><i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+                        <h4>Compromiso</h4>
+                        <p>Tu confianza es nuestro mayor activo. Nos comprometemos a ofrecerte transparencia, calidad y
+                            un soporte que va más allá de la venta.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
+    <section class="mission-vision-section py-5">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <img th:src="@{/img/mision.jpg}" class="img-fluid rounded shadow-lg"
+                        alt="Nuestra Misión en TiendaTech">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold">Nuestra Misión</h2>
+                    <p class="text-muted">Ser el principal catalizador de experiencias tecnológicas en el país,
+                        ofreciendo un portafolio de productos innovadores y un servicio de asesoramiento experto que
+                        empodere a nuestros clientes para alcanzar sus metas personales y profesionales.</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <img th:src="@{/img/vision.jpg}" class="img-fluid rounded shadow-lg"
+                        alt="Nuestra Visión en TiendaTech">
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h2 class="fw-bold">Nuestra Visión</h2>
+                    <p class="text-muted">Convertirnos en la comunidad de entusiastas de la tecnología más grande y
+                        confiable de la región, siendo reconocidos no solo por la calidad de nuestros productos, sino
+                        por nuestro compromiso con la educación y el soporte al cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="why-choose-us-section py-5 bg-alternate">
+        <div class="container text-center">
+            <h2 class="fw-bold">¿Por Qué Elegirnos?</h2>
+            <p class="lead text-muted mb-5">Te ofrecemos una experiencia de compra superior, centrada en tus
+                necesidades.</p>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="choice-item"><i class="fas fa-award fa-3x"></i>
+                        <h6 class="mt-3">Calidad Garantizada</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="choice-item"><i class="fas fa-dollar-sign fa-3x"></i>
+                        <h6 class="mt-3">Precios Competitivos</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="choice-item"><i class="fas fa-shipping-fast fa-3x"></i>
+                        <h6 class="mt-3">Envío Rápido</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="choice-item"><i class="fas fa-headset fa-3x"></i>
+                        <h6 class="mt-3">Soporte Experto</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="choice-item"><i class="fas fa-lock fa-3x"></i>
+                        <h6 class="mt-3">Compra Segura</h6>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+            <p class="text-center mt-5 fst-italic">"En cada detalle, buscamos la excelencia. Porque no solo vendemos
+                tecnología, construimos relaciones de confianza."</p>
+        </div>
+    </section>
+    <section class="testimonials-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Lo que opinan nuestros clientes</h2>
+                <p class="lead text-muted">Somos reconocidos como una gran empresa gracias a la preferencia y
+                    recomendación de nuestros clientes. Su confianza es nuestro mejor testimonio.</p>
+            </div>
+            <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card">
+                            <p>"Una atención increíble. Me ayudaron a elegir la laptop perfecta para mi trabajo.
+                                ¡Totalmente recomendados!"</p>
+                            <div class="author">- Lucía Fernandez</div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <p>"La calidad de los productos es A1 y el envío fue rapidísimo. Compré unos audífonos y
+                                estoy fascinado."</p>
+                            <div class="author">- Javier Mendoza</div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <p>"Lo que más valoro es el soporte post-venta. Tuvieron la paciencia para resolver todas
+                                mis dudas. ¡Gracias!"</p>
+                            <div class="author">- Mariana Costa</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel"
+                    data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel"
+                    data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+            </div>
+        </div>
+    </section>
 
+    <section id="seccion-faq" class="faq-section py-5 bg-alternate">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Preguntas Frecuentes</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="accordion" id="faqAccordion1">
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading1"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">¿Cuáles son los
+                                    métodos de pago?</button></h2>
+                            <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+                                <div class="accordion-body">Aceptamos tarjetas de crédito/débito (Visa, Mastercard),
+                                    Yape, Plin y transferencias bancarias.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading2"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">¿Hacen envíos a
+                                    todo el país?</button></h2>
+                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+                                <div class="accordion-body">Sí, realizamos envíos a todo el Perú a través de Olva
+                                    Courier y Shalom.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading3"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">¿Cómo puedo
+                                    hacer seguimiento de mi pedido?</button></h2>
+                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+                                <div class="accordion-body">Una vez que tu pedido sea despachado, recibirás un correo
+                                    con un número de seguimiento y un enlace para ver el estado de tu envío en tiempo
+                                    real.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading4"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">¿Tienen tienda
+                                    física?</button></h2>
+                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+                                <div class="accordion-body">Actualmente operamos como una tienda 100% online, lo que nos
+                                    permite ofrecer precios más competitivos.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading5"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">¿Puedo cambiar o
+                                    devolver un producto?</button></h2>
+                            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+                                <div class="accordion-body">Sí, tienes hasta 7 días después de recibir tu producto para
+                                    solicitar un cambio o devolución, siempre que el producto esté en su empaque
+                                    original y sin signos de uso.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading6"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">¿Los precios
+                                    incluyen IGV?</button></h2>
+                            <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+                                <div class="accordion-body">Sí, todos los precios mostrados en nuestra tienda online ya
+                                    incluyen el IGV.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="accordion" id="faqAccordion2">
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading7"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">¿Cuál es la
+                                    política de garantía?</button></h2>
+                            <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                                <div class="accordion-body">Todos nuestros productos nuevos cuentan con una garantía de
+                                    12 meses por defectos de fábrica.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading8"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">¿Puedo solicitar
+                                    factura?</button></h2>
+                            <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                                <div class="accordion-body">Sí, emitimos boleta y factura electrónica. Solo debes
+                                    indicarlo al momento de tu compra.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading9"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse9">¿Ofrecen soporte
+                                    técnico?</button></h2>
+                            <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                                <div class="accordion-body">Sí, ofrecemos soporte post-venta para ayudarte con la
+                                    configuración inicial de tus productos. Contáctanos por cualquiera de nuestros
+                                    canales.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading10"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse10">¿Es seguro
+                                    comprar en TiendaTech?</button></h2>
+                            <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                                <div class="accordion-body">Totalmente. Nuestro sitio cuenta con certificado de
+                                    seguridad SSL y trabajamos con pasarelas de pago confiables para proteger tu
+                                    información en todo momento.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading11"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse11">¿Cuánto tiempo
+                                    tarda en llegar mi pedido?</button></h2>
+                            <div id="collapse11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                                <div class="accordion-body">Para Lima Metropolitana, el tiempo de entrega es de 24 a 48
+                                    horas hábiles. Para otras provincias, el tiempo estimado es de 2 a 5 días hábiles.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="heading12"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse12">¿Puedo recoger
+                                    mi pedido en algún lugar?</button></h2>
+                            <div id="collapse12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                                <div class="accordion-body">Actualmente solo realizamos envíos a domicilio. No contamos
+                                    con una opción de recojo en tienda o almacén.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase fw-bold">TiendaTech</h5>
+                    <p class="text-muted-footer">Innovación y calidad al alcance de tu mano. Tu tienda de tecnología de
+                        confianza.</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5 class="text-uppercase fw-bold">Navegación</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="footer-link">Inicio</a></li>
+                        <li><a href="/productos" class="footer-link">Catálogo</a></li>
+                        <li><a href="#" class="footer-link">Ofertas</a></li>
+                        <li><a href="#" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold">Soporte</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Preguntas Frecuentes</a></li>
+                        <li><a href="#" class="footer-link">Política de Devoluciones</a></li>
+                        <li><a href="#" class="footer-link">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold">Síguenos</h5><a href="#" class="social-icon"><i
+                            class="fab fa-facebook-f"></i></a><a href="#" class="social-icon"><i
+                            class="fab fa-instagram"></i></a><a href="#" class="social-icon"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-muted-footer">&copy; 2025 TiendaTech. Todos los derechos reservados.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
